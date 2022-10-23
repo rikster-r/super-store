@@ -5,6 +5,8 @@ import Footer from "./Footer";
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
 import Shop from "./pages/Shop";
+import "./styles/App.scss";
+import "./styles/reset.scss";
 
 function App() {
   const [cart, setCart] = useState([]);

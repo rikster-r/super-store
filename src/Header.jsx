@@ -2,9 +2,9 @@ import { Link, Outlet } from "react-router-dom";
 
 export default function Header() {
   return (
-    <>
+    <header>
       <Link to="/">
-        <h1>Super Store</h1>
+        <h1 className="title">Super Store</h1>
       </Link>
       <nav>
         <ul>
@@ -16,14 +16,14 @@ export default function Header() {
           </li>
           <li>
             <Link to="/cart">
-              <button>
-                <i class="fa-solid fa-cart-shopping"></i>
+              <button className="cart">
+                <i className="fa-solid fa-cart-shopping"></i>
               </button>
             </Link>
           </li>
         </ul>
       </nav>
       <Outlet></Outlet>
-    </>
+    </header>
   );
 }
