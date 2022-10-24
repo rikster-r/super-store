@@ -5,11 +5,32 @@ $secondary-clr: #111827;
 $tertiary-clr: #fafafa;
 $white: #fff;
 
+@mixin flexCenter($direction) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+}
+
+html {
+  height: 100%;
+}
+
 body {
   padding: 0;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
   font-family: "Poppins", sans-serif;
+  color: $white;
+  background-color: $secondary-clr;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
 }
 
 a {
@@ -33,38 +54,26 @@ header {
     padding: 16px;
   }
 
-  a {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
   .title {
     color: $main-clr;
   }
 
-  nav {
-    color: $white;
+  ul {
+    @include flexCenter(row);
+    gap: 2rem;
+    padding: 0;
 
-    ul {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 2rem;
-      padding: 0;
+    li {
+      list-style-type: none;
 
-      li {
-        list-style-type: none;
+      .cart {
+        background-color: $white;
+        padding: 0.8rem 1rem;
+        border-radius: 100vh;
+        border: none;
 
-        .cart {
-          background-color: $white;
-          padding: 0.8rem 1rem;
-          border-radius: 100vh;
-          border: none;
-
-          &:hover {
-            cursor: pointer;
-          }
+        &:hover {
+          cursor: pointer;
         }
       }
     }
@@ -74,6 +83,7 @@ header {
 footer {
   display: grid;
   place-content: center;
+  padding: 1rem;
 
   a {
     display: flex;

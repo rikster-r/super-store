@@ -1,0 +1,41 @@
+@use "./App.scss" as *;
+
+body {
+  background-image: url("../assets/blob-scene-haikei.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media (max-width: 70rem) {
+    background-image: url("../assets/wave-haikei.svg");
+  }
+}
+
+main {
+  @include flexCenter(column);
+  text-align: center;
+
+  .btn.btn-shop-start {
+    border: 3px solid $secondary-clr;
+    padding: 0.5rem;
+    width: 200px;
+    border-radius: 2rem;
+    background-color: $main-clr;
+    color: $secondary-clr;
+    transition: all 200ms ease-out;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:hover,
+    &:focus {
+      transform: scale(1.1);
+      transition: all 200ms ease-in;
+    }
+  }
+
+  .info {
+    @include flexCenter(column);
+    gap: 1rem;
+  }
+}
