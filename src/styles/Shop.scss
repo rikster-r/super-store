@@ -1,0 +1,81 @@
+@use "./App.scss" as *;
+
+.shop {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(200px, 250px));
+  place-content: center;
+  gap: 1rem;
+  padding: 1rem;
+
+  @media (max-width: 55rem) {
+    grid-template-columns: repeat(3, 200px);
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  @media (max-width: 40rem) {
+    grid-template-columns: repeat(2, 200px);
+  }
+
+  @media (max-width: 30rem) {
+    grid-template-columns: 250px;
+  }
+
+  @media (max-width: 20rem) {
+    grid-template-columns: 1fr;
+  }
+
+  .item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border-radius: 1rem;
+    padding: 1rem;
+    background-color: $secondary-clr;
+
+    .img-wrapper {
+      @include flexCenter(row);
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      padding: 1rem;
+      background-color: $white;
+
+      img {
+        width: auto;
+        height: auto;
+        max-height: 100%;
+      }
+    }
+
+    .item-control {
+      margin-top: auto;
+
+      .btn.btn-item-control {
+        @include flexCenter(row);
+        border-radius: 0.5rem;
+        border: 2px solid $main-clr;
+        background-color: $secondary-clr;
+        color: $main-clr;
+        padding: 0.5rem 0.8rem;
+        transition: all 200ms linear;
+
+        &:hover,
+        &:focus-within {
+          background-color: $main-clr;
+          color: $secondary-clr;
+          transition: all 200ms linear;
+        }
+      }
+    }
+
+    .item-control.vertical {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      .btn.btn-item-control {
+        aspect-ratio: 1 / 1;
+      }
+    }
+  }
+}

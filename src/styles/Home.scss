@@ -1,6 +1,6 @@
 @use "./App.scss" as *;
 
-body {
+body.blobs-active {
   background-image: url("../assets/blob-scene-haikei.svg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -10,7 +10,7 @@ body {
   }
 }
 
-main {
+.home {
   @include flexCenter(column);
   text-align: center;
 
@@ -22,10 +22,6 @@ main {
     background-color: $main-clr;
     color: $secondary-clr;
     transition: all 200ms ease-out;
-
-    &:hover {
-      cursor: pointer;
-    }
 
     &:hover,
     &:focus {

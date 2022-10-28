@@ -38,20 +38,24 @@ a {
   text-decoration: none;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 header {
-  padding: 16px 250px;
+  padding: 1rem 200px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: $secondary-clr;
 
   @media (max-width: 60rem) {
-    padding: 16px 150px;
+    padding: 1rem 100px;
   }
 
-  @media (max-width: 45rem) {
+  @media (max-width: 50rem) {
     flex-direction: column;
-    padding: 16px;
+    padding: 1rem;
   }
 
   .title {
@@ -71,10 +75,6 @@ header {
         padding: 0.8rem 1rem;
         border-radius: 100vh;
         border: none;
-
-        &:hover {
-          cursor: pointer;
-        }
       }
     }
   }
@@ -93,5 +93,9 @@ footer {
     &:hover {
       text-decoration: underline;
     }
+  }
+
+  @media (max-width: 70rem) {
+    color: $secondary-clr;
   }
 }

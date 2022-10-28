@@ -9,19 +9,40 @@ import "./styles/App.scss";
 import "./styles/reset.scss";
 
 function App() {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(new Map());
 
   const addCartItem = (newItem) => {
-    let cartClone = [...cart];
-    const existingItem = cartClone.find((item) => item.id === newItem.id);
+    let cartClone = new Map(cart);
+    cartClone.set(newItem.id, { ...newItem, count: 1 });
+    setCart(cartClone);
+  };
 
-    if (existingItem) {
-      existingItem.count++;
+  const increaseCartItemCount = (newItem) => {
+    let cartClone = new Map(cart);
+    cartClone.get(newItem.id).count++;
+    setCart(cartClone);
+  };
+
+  const decreaseCartItemCount = (newItem) => {
+    let cartClone = new Map(cart);
+
+    if (cartClone.get(newItem.id).count === 1) {
+      cartClone.delete(newItem.id);
     } else {
-      cartClone.push(newItem);
+      cartClone.get(newItem.id).count--;
     }
 
     setCart(cartClone);
+  };
+
+  const handleNewItem = (newItem, effect) => {
+    if (effect === "add") {
+      addCartItem(newItem);
+    } else if (effect === "increase") {
+      increaseCartItemCount(newItem);
+    } else if (effect === "decrease") {
+      decreaseCartItemCount(newItem);
+    }
   };
 
   return (
@@ -31,11 +52,11 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route
           path="/shop"
-          element={<Shop items={cart} addCartItem={addCartItem} />}
+          element={<Shop cart={cart} handleNewItem={handleNewItem} />}
         />
         <Route
           path="/cart"
-          element={<Cart items={cart} addCartItem={addCartItem} />}
+          element={<Cart cart={cart} handleNewItem={handleNewItem} />}
         />
       </Routes>
       <Footer></Footer>
