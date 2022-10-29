@@ -21,7 +21,7 @@ export default function Cart({ cart, handleCartControl }) {
                     <img src={item.image} alt={item.title} />
                   </div>
                   <div>
-                    <h3>{item.title}</h3>
+                    <h3 className="item-title">{item.title}</h3>
                     <p>{item.price * item.count}$</p>
                     <NewItemButton
                       cart={cart}
