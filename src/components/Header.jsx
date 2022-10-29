@@ -1,6 +1,6 @@
 import { Link, Outlet } from "react-router-dom";
 
-export default function Header() {
+export default function Header({ cart }) {
   return (
     <header>
       <Link to="/">
@@ -17,6 +17,7 @@ export default function Header() {
           <li>
             <Link to="/cart">
               <button className="cart">
+                <div className="cart-items-count">{cart.size}</div>
                 <i className="fa-solid fa-cart-shopping"></i>
               </button>
             </Link>

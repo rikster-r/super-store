@@ -1,0 +1,86 @@
+@use "./App.scss" as *;
+
+.cart {
+  @include flexCenter(column);
+  gap: 2rem;
+
+  .slogan {
+    @include flexCenter(row);
+    gap: 0.5rem;
+
+    svg {
+      font-size: 1.5rem;
+    }
+  }
+
+  .cart-items {
+    @include flexCenter(column);
+    gap: 2rem;
+
+    .cart-item {
+      display: grid;
+      grid-template-columns: 1fr 3fr 3rem ;
+      align-items: center;
+      gap: 1rem;
+      width: 500px;
+    }
+
+    .img-wrapper {
+      @include flexCenter(row);
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      padding: 1rem;
+      background-color: $white;
+    }
+  
+    img {
+      width: auto;
+      height: auto;
+      max-height: 100%;
+    }
+
+    .btn.btn-trash {
+      aspect-ratio: 1 / 1;
+      width: 3rem;
+      background-color: $secondary-clr;
+      border: none;
+      align-self: center;
+
+      svg {
+        font-size: 1.5rem;
+        color: $tertiary-clr;
+      }
+    }
+  }
+
+  .checkout {
+    @include flexCenter(column);
+    text-align: center;
+    gap: 1rem;
+
+    .btns {
+      @include flexCenter(row);
+      gap: 1rem;
+
+      .btn.btn-checkout {
+        background-color: $secondary-clr;
+        padding: 0.5rem 1rem;
+        color: $secondary-clr;
+        border-radius: 1rem;
+        border: 2px solid $main-clr;
+        background-color: $main-clr;
+      }
+  
+      .btn.btn-clear {
+        background-color: $secondary-clr;
+        padding: 0.5rem 1rem;
+        color: $secondary-clr;
+        border-radius: 1rem;
+        border: none;
+        color: $tertiary-clr;
+      }
+
+    }
+
+  }
+}

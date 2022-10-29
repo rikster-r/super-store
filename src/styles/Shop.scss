@@ -46,36 +46,42 @@
         max-height: 100%;
       }
     }
+  }
+}
 
-    .item-control {
-      margin-top: auto;
+.item-control {
+  margin-top: auto;
 
-      .btn.btn-item-control {
-        @include flexCenter(row);
-        border-radius: 0.5rem;
-        border: 2px solid $main-clr;
-        background-color: $secondary-clr;
-        color: $main-clr;
-        padding: 0.5rem 0.8rem;
-        transition: all 200ms linear;
+  .btn.btn-item-control {
+    @include flexCenter(row);
+    border-radius: 0.5rem;
+    border: 2px solid $main-clr;
+    background-color: $secondary-clr;
+    color: $main-clr;
+    padding: 0.5rem 0.8rem;
+    transition: all 200ms linear;
 
-        &:hover,
-        &:focus-within {
-          background-color: $main-clr;
-          color: $secondary-clr;
-          transition: all 200ms linear;
-        }
-      }
+    &:hover,
+    &:focus-visible {
+      background-color: $main-clr;
+      color: $secondary-clr;
+      transition: all 200ms linear;
     }
 
-    .item-control.vertical {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-
-      .btn.btn-item-control {
-        aspect-ratio: 1 / 1;
-      }
+    &:disabled {
+      color: $tertiary-clr;
+      border: none;
+      pointer-events: none;
     }
+  }
+}
+
+.item-control.vertical {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  .btn.btn-item-control {
+    aspect-ratio: 1 / 1;
   }
 }

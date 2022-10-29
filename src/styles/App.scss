@@ -71,6 +71,8 @@ header {
       list-style-type: none;
 
       .cart {
+        @include flexCenter(row);
+        gap: 0.5rem;
         background-color: $white;
         padding: 0.8rem 1rem;
         border-radius: 100vh;
