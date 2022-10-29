@@ -5,7 +5,7 @@ import "../styles/Cart.scss";
 export default function Cart({ cart, handleCartControl }) {
   const handleClick = (e) => {
     const id = Number(e.target.closest("[data-id]")?.dataset?.id);
-    handleCartControl(id, e.target.closest('button').dataset.effect);
+    handleCartControl(id, e.target.closest("button").dataset.effect);
   };
 
   return (
@@ -67,9 +67,9 @@ export default function Cart({ cart, handleCartControl }) {
             <h2>Your cart is Empty!</h2>
             <i className="fa-regular fa-face-sad-tear"></i>
           </div>
-          <button className="btn btn-shop-start">
-            <Link to="/shop">Shop Now</Link>
-          </button>
+          <Link to="/shop">
+            <button className="btn btn-shop-start">Shop Now</button>
+          </Link>
         </div>
       )}
     </main>
