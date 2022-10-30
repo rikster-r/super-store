@@ -8,19 +8,14 @@ import Shop from "./pages/Shop";
 import "./styles/App.scss";
 import "./styles/reset.scss";
 
-let CACHE = [];
-
 function App() {
   const [cart, setCart] = useState(new Map());
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    if (CACHE.length) setItems(CACHE);
-
     fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
       .then((json) => {
-        CACHE = json;
         setItems(json);
       });
   }, []);
@@ -70,7 +65,6 @@ function App() {
     } else if (effect === "clear") {
       clearCart();
     } else if (effect === "remove") {
-
       removeCartItem(id);
     }
   };
