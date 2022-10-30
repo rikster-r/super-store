@@ -21,7 +21,6 @@
     .cart-item {
       display: grid;
       grid-template-columns: 1fr 3fr 3rem;
-      justify-items: center;
       align-items: center;
       gap: 1rem;
       width: 500px;
@@ -29,6 +28,7 @@
       @media (max-width: 45rem) {
         width: 300px;
         grid-template-columns: 1fr 2fr 1rem;
+        justify-items: center;
       }
 
       .item-title {
