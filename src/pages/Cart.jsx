@@ -22,7 +22,7 @@ export default function Cart({ cart, handleCartControl }) {
                   </div>
                   <div>
                     <h3 className="item-title">{item.title}</h3>
-                    <p>{item.price * item.count}$</p>
+                    <p>{(item.price * item.count).toFixed(2)}$</p>
                     <NewItemButton
                       cart={cart}
                       id={id}
