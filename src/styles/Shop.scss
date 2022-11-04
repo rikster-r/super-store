@@ -1,4 +1,4 @@
-@use "./App.scss" as *;
+@use './App.scss' as *;
 
 .shop {
   display: grid;
@@ -35,14 +35,14 @@
 
     .img-wrapper {
       @include flexCenter(row);
-      width: 100%;
+      max-width: 100%;
+      height: auto;
       aspect-ratio: 1 / 1;
       padding: 1rem;
       background-color: $white;
 
       img {
-        width: auto;
-        height: auto;
+        max-width: 100%;
         max-height: 100%;
       }
     }
