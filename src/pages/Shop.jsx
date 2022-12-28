@@ -1,12 +1,24 @@
-import "../styles/Shop.scss";
-import NewItemButton from "../components/NewItemButton";
+import '../styles/Shop.scss';
+import NewItemButton from '../components/NewItemButton';
+import { motion } from 'framer-motion';
+
+const variants = {
+  hidden: { opacity: 0 },
+  show: {
+    transition: {
+      staggerChildren: 0.1,
+    },
+    opacity: 1,
+  },
+  close: { opacity: 0 },
+};
 
 export default function Shop({ cart, handleCartControl, items }) {
   return (
-    <main className="shop">
-      {items.map((item) => {
+    <motion.main className="shop" variants={variants} initial="hidden" animate="show" exit="close">
+      {items.map(item => {
         return (
-          <div key={item.id} data-id={item.id} className="item">
+          <motion.div key={item.id} data-id={item.id} className="item" variants={variants}>
             <div className="img-wrapper">
               <img src={item.image} alt={item.title} />
             </div>
@@ -18,9 +30,9 @@ export default function Shop({ cart, handleCartControl, items }) {
               handleCartControl={handleCartControl}
               removable="true"
             />
-          </div>
+          </motion.div>
         );
       })}
-    </main>
+    </motion.main>
   );
 }
