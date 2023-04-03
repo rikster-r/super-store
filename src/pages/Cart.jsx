@@ -75,10 +75,9 @@ export default function Cart({ cart, handleCartControl }) {
       ) : (
         <motion.div
           className="info"
-          initial={{ scale: 0 }}
-          animate={{ scale: [0, 1.5, 1] }}
-          exit={{ scale: 0 }}
-          transition={{ times: [0.3, 0.5, 0.3] }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
         >
           <div className="slogan">
             <h2>Your cart is Empty!</h2>

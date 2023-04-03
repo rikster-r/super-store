@@ -14,10 +14,9 @@ export default function Home() {
     <main className="home">
       <motion.div
         className="info"
-        initial={{ scale: 0 }}
-        animate={{ scale: [0, 1.3, 1] }}
-        exit={{ scale: 0 }}
-        transition={{ times: [0.3, 0.5, 0.3], delay: 0.2 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
       >
         <div className="slogan">
           <h1>A Super Store</h1>
