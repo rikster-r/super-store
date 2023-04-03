@@ -15,12 +15,7 @@ const variants = {
   close: { opacity: 0 },
 };
 
-export default function Cart({ cart, handleCartControl }) {
-  const handleClick = e => {
-    const id = Number(e.target.closest('[data-id]')?.dataset?.id);
-    handleCartControl(id, e.target.closest('button').dataset.effect);
-  };
-
+export default function Cart({ cart, cartDispatch }) {
   return (
     <main className="cart">
       {cart.size ? (
@@ -44,12 +39,15 @@ export default function Cart({ cart, handleCartControl }) {
                     <p>{(item.price * item.count).toFixed(2)}$</p>
                     <NewItemButton
                       cart={cart}
-                      id={id}
-                      handleCartControl={handleCartControl}
-                      removable="false"
+                      cartDispatch={cartDispatch}
+                      item={item}
+                      removable={false}
                     />
                   </div>
-                  <button className="btn btn-trash" onClick={handleClick} data-effect="remove">
+                  <button
+                    className="btn btn-trash"
+                    onClick={() => cartDispatch({ type: 'remove', item })}
+                  >
                     <i className="fa-solid fa-trash"></i>
                   </button>
                 </motion.li>
@@ -65,7 +63,7 @@ export default function Cart({ cart, handleCartControl }) {
               $
             </p>
             <div className="btns">
-              <button onClick={handleClick} data-effect="clear" className="btn btn-clear">
+              <button onClick={() => cartDispatch({ type: 'clear' })} className="btn btn-clear">
                 Clear cart
               </button>
               <button className="btn btn-checkout">Checkout</button>

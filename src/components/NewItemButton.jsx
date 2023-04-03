@@ -1,20 +1,9 @@
-export default function NewItemButton({
-  cart,
-  id,
-  handleCartControl,
-  removable,
-}) {
-  const handleClick = (e) => {
-    const id = Number(e.target.closest("[data-id]").dataset.id);
-    handleCartControl(id, e.target.dataset.effect);
-  };
-
-  if (cart.get(id) === undefined || cart.get(id).count === 0) {
+export default function NewItemButton({ cart, item, removable, cartDispatch }) {
+  if (cart.get(item.id) === undefined || cart.get(item.id).count === 0) {
     return (
       <div className="item-control">
         <button
-          onClick={handleClick}
-          data-effect="add"
+          onClick={() => cartDispatch({ type: 'add', item })}
           className="btn btn-item-control"
         >
           Add to cart
@@ -24,23 +13,19 @@ export default function NewItemButton({
   } else {
     return (
       <div className="item-control vertical">
-        {removable === "false" && cart.get(id).count === 1 ? (
-          <button className="btn btn-item-control" disabled>
-            -
-          </button>
-        ) : (
-          <button
-            onClick={handleClick}
-            data-effect="decrease"
-            className="btn btn-item-control"
-          >
-            -
-          </button>
-        )}
-        <span>{cart.get(id).count}</span>
         <button
-          onClick={handleClick}
-          data-effect="increase"
+          onClick={() => {
+            const type = cart.get(item.id).count === 1 ? 'remove' : 'decrease';
+            cartDispatch({ type, item });
+          }}
+          className="btn btn-item-control"
+          disabled={cart.get(item.id).count === 1 && !removable}
+        >
+          -
+        </button>
+        <span>{cart.get(item.id).count}</span>
+        <button
+          onClick={() => cartDispatch({ type: 'increase', item })}
           className="btn btn-item-control"
         >
           +

@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 export default function Header({ cart }) {
   return (
@@ -24,7 +24,6 @@ export default function Header({ cart }) {
           </li>
         </ul>
       </nav>
-      <Outlet></Outlet>
     </header>
   );
 }
