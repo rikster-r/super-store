@@ -1,3 +1,3 @@
-# shopping-cart
+# super-store 
 
-Preview: https://rikster-r.github.io/shopping-cart/#
+Preview: https://rikster-r.github.io/super-store/#
