@@ -1,8 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
 
-$main-clr: #67e8f9;
+$primary-clr: #67e8f9;
+$primary-clr-200: #0796a9;
 $secondary-clr: #111827;
 $tertiary-clr: #fafafa;
+$tertiary-clr-200: #c8c8c8;
 $white: #fff;
 
 @mixin flexCenter($direction) {
@@ -12,19 +14,21 @@ $white: #fff;
   align-items: center;
 }
 
-html {
+html,
+body {
   height: 100%;
 }
 
 body {
+  margin: 0;
   padding: 0;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: $white;
   background-color: $secondary-clr;
 }
 
-#root {
-  min-height: 100vh;
+body > div {
+  height: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -59,7 +63,7 @@ header {
   }
 
   .title {
-    color: $main-clr;
+    color: $primary-clr;
   }
 
   ul {
@@ -70,14 +74,26 @@ header {
     li {
       list-style-type: none;
 
-      .cart {
-        @include flexCenter(row);
-        gap: 0.5rem;
-        background-color: $white;
-        padding: 0.8rem 1rem;
-        border-radius: 100vh;
-        border: none;
+      &:hover {
+        color: $tertiary-clr-200;
       }
+    }
+  }
+
+  .btn.btn-cart {
+    @include flexCenter(row);
+    gap: 0.5rem;
+    background-color: $tertiary-clr;
+    color: $secondary-clr;
+    padding: 0.8rem 1rem;
+    border-radius: 100vh;
+    border: none;
+    transition-property: background-color;
+    transition-timing-function: cubic-bezier(0.2, 0, 0.1, 1);
+    transition-duration: 150ms;
+
+    &:hover {
+      background-color: $tertiary-clr-200;
     }
   }
 }

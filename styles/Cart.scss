@@ -1,4 +1,4 @@
-@use "./App.scss" as *;
+@use './App.scss' as *;
 
 .cart {
   @include flexCenter(column);
@@ -81,11 +81,18 @@
 
       .btn.btn-checkout {
         background-color: $secondary-clr;
-        padding: 0.5rem 1rem;
+        padding: 0.6rem 1.2rem;
         color: $secondary-clr;
-        border-radius: 1rem;
-        border: 2px solid $main-clr;
-        background-color: $main-clr;
+        border-radius: 0.8rem;
+        border: none;
+        background-color: $primary-clr;
+        transition-property: background-color;
+        transition-timing-function: cubic-bezier(0.2, 0, 0.1, 1);
+        transition-duration: 150ms;
+
+        &:hover {
+          background-color: $primary-clr-200;
+        }
       }
 
       .btn.btn-clear {
@@ -95,6 +102,10 @@
         border-radius: 1rem;
         border: none;
         color: $tertiary-clr;
+
+        &:hover {
+          color: $tertiary-clr-200;
+        }
       }
     }
   }

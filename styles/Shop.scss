@@ -55,15 +55,15 @@
   .btn.btn-item-control {
     @include flexCenter(row);
     border-radius: 0.5rem;
-    border: 2px solid $main-clr;
+    border: 2px solid $primary-clr;
     background-color: $secondary-clr;
-    color: $main-clr;
+    color: $primary-clr;
     padding: 0.5rem 0.8rem;
     transition: all 200ms linear;
 
     &:hover,
     &:focus-visible {
-      background-color: $main-clr;
+      background-color: $primary-clr;
       color: $secondary-clr;
       transition: all 200ms linear;
     }

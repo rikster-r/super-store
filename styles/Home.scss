@@ -1,12 +1,12 @@
-@use "./App.scss" as *;
+@use './App.scss' as *;
 
 body.blobs-active {
-  background-image: url("../assets/blob-scene-haikei.svg");
+  background-image: url('../assets/blob-scene-haikei.svg');
   background-repeat: no-repeat;
   background-size: cover;
 
   @media (max-width: 70rem) {
-    background-image: url("../assets/wave-haikei.svg");
+    background-image: url('../assets/wave-haikei.svg');
   }
 }
 
@@ -25,7 +25,7 @@ body.blobs-active {
   padding: 0.5rem;
   width: 200px;
   border-radius: 2rem;
-  background-color: $main-clr;
+  background-color: $primary-clr;
   color: $secondary-clr;
   transition: all 200ms ease-out;
 

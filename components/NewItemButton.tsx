@@ -1,4 +1,9 @@
-export default function NewItemButton({ cart, item, removable, cartDispatch }) {
+import { useContext } from 'react';
+import { CartContext } from '../pages/_app';
+
+export default function NewItemButton({ item, removable }) {
+  const { cart, cartDispatch } = useContext(CartContext);
+
   if (cart.get(item.id) === undefined || cart.get(item.id).count === 0) {
     return (
       <div className="item-control">
