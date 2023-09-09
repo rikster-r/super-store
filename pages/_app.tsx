@@ -4,14 +4,25 @@ import '../styles/Cart.scss';
 import '../styles/Shop.scss';
 import { useReducer, createContext } from 'react';
 import Layout from '../components/Layout';
+import { Poppins } from 'next/font/google';
+
+export const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '500', '700'],
+  display: 'swap',
+});
 
 interface Product {
-  id: number;
+  _id: number;
+  _updatedAt: string;
+  _createdAt: string;
+  _rev: string;
+  _type: string;
   title: string;
   price: number;
   description: string;
   category: string;
-  image: string;
+  imageUrl: string;
   rating: {
     rate: number;
     count: number;
@@ -32,11 +43,14 @@ type cartAction = {
 const cartReducer = (cart: Cart, action: cartAction) => {
   switch (action.type) {
     case 'add':
-      return new Map([...cart, [action.item.id, { ...action.item, count: 1 }]]);
+      return new Map([
+        ...cart,
+        [action.item._id, { ...action.item, count: 1 }],
+      ]);
     case 'increase':
       return new Map(
         [...cart].map(([id, item]) =>
-          id === action.item.id
+          id === action.item._id
             ? [id, { ...item, count: item.count + 1 }]
             : [id, item]
         )
@@ -44,13 +58,13 @@ const cartReducer = (cart: Cart, action: cartAction) => {
     case 'decrease':
       return new Map(
         [...cart].map(([id, item]) =>
-          id === action.item.id
+          id === action.item._id
             ? [id, { ...item, count: item.count - 1 }]
             : [id, item]
         )
       );
     case 'remove':
-      return new Map([...cart].filter(([id]) => id !== action.item.id));
+      return new Map([...cart].filter(([id]) => id !== action.item._id));
     case 'clear':
       return new Map();
     default:

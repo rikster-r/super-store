@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Head from 'next/head';
+import { poppins } from './_app';
 
 export default function Home() {
   useEffect(() => {
@@ -19,7 +20,7 @@ export default function Home() {
         />
         <title>Super Store</title>
       </Head>
-      <main className="home">
+      <main className={`${poppins.className} home`}>
         <motion.div
           className="info"
           initial={{ opacity: 0 }}

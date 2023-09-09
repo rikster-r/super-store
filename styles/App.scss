@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
-
+// todo change scrollbar
 $primary-clr: #67e8f9;
 $primary-clr-200: #0796a9;
 $secondary-clr: #111827;
@@ -17,6 +16,7 @@ $white: #fff;
 html,
 body {
   height: 100%;
+  width: 100%;
 }
 
 body {
@@ -27,7 +27,7 @@ body {
   background-color: $secondary-clr;
 }
 
-body > div {
+#__next {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -46,20 +46,29 @@ button:hover {
   cursor: pointer;
 }
 
-header {
-  padding: 1rem 200px;
+.header-container {
+  background-color: $secondary-clr;
+  width: 100%;
+}
+
+.header {
+  width: 100%;
+  max-width: 1900px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: $secondary-clr;
+  flex-direction: column;
+  padding: 1rem 1rem 0 1rem;
 
-  @media (max-width: 60rem) {
-    padding: 1rem 100px;
+  @media (min-width: 768px) {
+    flex-direction: row;
+    padding: 1rem 50px;
   }
 
-  @media (max-width: 50rem) {
-    flex-direction: column;
-    padding: 1rem;
+  @media (min-width: 1200px) {
+    padding: 1rem 200px;
   }
 
   .title {
@@ -95,6 +104,23 @@ header {
     &:hover {
       background-color: $tertiary-clr-200;
     }
+  }
+}
+
+.img-wrapper {
+  max-width: 100%;
+  max-height: 100%;
+  aspect-ratio: 1 / 1;
+  padding: 1rem;
+  background-color: $white;
+  position: relative;
+  margin-bottom: 0.5rem;
+
+  .img {
+    max-width: 100%;
+    max-height: 100%;
+    position: relative !important;
+    object-fit: contain;
   }
 }
 

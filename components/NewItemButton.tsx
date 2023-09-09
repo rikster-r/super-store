@@ -4,7 +4,7 @@ import { CartContext } from '../pages/_app';
 export default function NewItemButton({ item, removable }) {
   const { cart, cartDispatch } = useContext(CartContext);
 
-  if (cart.get(item.id) === undefined || cart.get(item.id).count === 0) {
+  if (cart.get(item._id) === undefined || cart.get(item._id).count === 0) {
     return (
       <div className="item-control">
         <button
@@ -20,15 +20,15 @@ export default function NewItemButton({ item, removable }) {
       <div className="item-control vertical">
         <button
           onClick={() => {
-            const type = cart.get(item.id).count === 1 ? 'remove' : 'decrease';
+            const type = cart.get(item._id).count === 1 ? 'remove' : 'decrease';
             cartDispatch({ type, item });
           }}
           className="btn btn-item-control"
-          disabled={cart.get(item.id).count === 1 && !removable}
+          disabled={cart.get(item._id).count === 1 && !removable}
         >
           -
         </button>
-        <span>{cart.get(item.id).count}</span>
+        <span>{cart.get(item._id).count}</span>
         <button
           onClick={() => cartDispatch({ type: 'increase', item })}
           className="btn btn-item-control"

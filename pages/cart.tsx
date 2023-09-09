@@ -5,6 +5,8 @@ import Head from 'next/head';
 import { useContext } from 'react';
 import { CartContext } from '../pages/_app';
 import { Trash2, Frown } from 'lucide-react';
+import Image from 'next/image';
+import { poppins } from '../pages/_app';
 
 const variants = {
   hidden: { opacity: 0, y: -10 },
@@ -27,7 +29,7 @@ export default function Cart() {
         <meta name="description" content="" />
         <title>SuperStore &bull; Checkout</title>
       </Head>
-      <main className="cart">
+      <main className={`${poppins.className} cart`}>
         {cart.size ? (
           <>
             <h2>Your Cart</h2>
@@ -47,10 +49,17 @@ export default function Cart() {
                     variants={variants}
                   >
                     <div className="img-wrapper">
-                      <img src={item.image} alt={item.title} />
+                      <Image
+                        src={item.imageUrl}
+                        alt={item.title}
+                        fill={true}
+                        className="img"
+                        priority={id < 4}
+                        sizes="25vw"
+                      />
                     </div>
                     <div>
-                      <h3 className="item-title">{item.title}</h3>
+                      <h2 className="item-title">{item.title}</h2>
                       <p>{(item.price * item.count).toFixed(2)}$</p>
                       <NewItemButton item={item} removable={false} />
                     </div>

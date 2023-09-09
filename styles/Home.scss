@@ -5,7 +5,7 @@ body.blobs-active {
   background-repeat: no-repeat;
   background-size: cover;
 
-  @media (max-width: 70rem) {
+  @media (max-width: 1000px) {
     background-image: url('../assets/wave-haikei.svg');
   }
 }

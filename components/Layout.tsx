@@ -7,7 +7,7 @@ type Props = {
   children: React.ReactNode | React.ReactNode[];
 };
 
-export default function Layout({ children }) {
+export default function Layout({ children }: Props) {
   return (
     <>
       <Head>
