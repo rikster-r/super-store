@@ -1,10 +1,13 @@
-// todo change scrollbar
 $primary-clr: #67e8f9;
 $primary-clr-200: #0796a9;
 $secondary-clr: #111827;
 $tertiary-clr: #fafafa;
 $tertiary-clr-200: #c8c8c8;
 $white: #fff;
+
+:root {
+  color-scheme: dark;
+}
 
 @mixin flexCenter($direction) {
   display: flex;
