@@ -103,7 +103,7 @@ export default function Cart() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            <div className="slogan">
+            <div className="cart-empty-text">
               <h2>Your cart is Empty!</h2>
               <Frown />
             </div>

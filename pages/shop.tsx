@@ -13,7 +13,7 @@ const client = createClient({
 });
 
 export async function getStaticProps() {
-  const products = await client.fetch(`*[_type == "product"]`);
+  const products: Product[] = await client.fetch(`*[_type == "product"]`);
 
   return {
     props: {

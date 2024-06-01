@@ -3,6 +3,9 @@ $primary-clr-200: #0796a9;
 $secondary-clr: #111827;
 $tertiary-clr: #fafafa;
 $tertiary-clr-200: #c8c8c8;
+$tertiary-clr-300: #909090;
+$tertiary-clr-400: #5b5b5b;
+$tertiary-clr-500: #2c2c2c;
 $white: #fff;
 
 :root {
@@ -122,8 +125,95 @@ button:hover {
   .img {
     max-width: 100%;
     max-height: 100%;
-    position: relative !important;
+    position: relative;
     object-fit: contain;
+  }
+}
+
+.carousel-title-line {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 16px;
+
+  @media (min-width: 500px) {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 768px) {
+    width: 80%;
+  }
+}
+
+.carousel {
+  margin: 2rem 1rem;
+
+  @media (min-width: 500px) {
+    width: 60%;
+    margin: 2rem auto;
+  }
+
+  @media (min-width: 768px) {
+    width: 80%;
+  }
+}
+
+.carousel .img-wrapper {
+  border-radius: 8px;
+}
+
+.carousel-button {
+  @include flexCenter(row);
+  min-width: 36px;
+  aspect-ratio: 1/1;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: $tertiary-clr-500;
+  color: $tertiary-clr;
+  padding: 8px;
+  transition: background-color 200ms linear;
+
+  &:hover,
+  &:focus-visible {
+    background-color: $tertiary-clr-200;
+    color: $secondary-clr;
+    transition: all 200ms linear;
+  }
+
+  &:disabled {
+    color: $tertiary-clr-200;
+    border-color: $tertiary-clr-200;
+    pointer-events: none;
+    opacity: 0.25;
+    cursor: not-allowed;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
+}
+
+.carousel .carousel-container {
+  display: flex;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+  z-index: 0;
+  height: auto;
+  gap: 1rem;
+}
+
+.carousel .item {
+  min-width: calc(50% - 1rem);
+  height: auto;
+
+  @media (min-width: 768px) {
+    min-width: calc(25% - 0.5rem);
+  }
+
+  @media (min-width: 1000px) {
+    padding: 0.5rem;
   }
 }
 

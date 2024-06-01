@@ -1,23 +1,28 @@
 @use './App.scss' as *;
 
 body.blobs-active {
-  background-image: url('../assets/blob-scene-haikei.svg');
   background-repeat: no-repeat;
   background-size: cover;
 
-  @media (max-width: 1000px) {
-    background-image: url('../assets/wave-haikei.svg');
+  @media (min-width: 1000px) {
+    background-image: url('../assets/blob-scene-haikei.svg');
   }
 }
 
 .home {
   @include flexCenter(column);
   text-align: center;
+  min-height: calc(100vh - 6rem);
 }
 
 .info {
   @include flexCenter(column);
   gap: 1rem;
+}
+
+.slogan {
+  @include flexCenter(column);
+  font-size: 2rem;
 }
 
 .btn.btn-shop-start {
@@ -34,4 +39,12 @@ body.blobs-active {
     transform: scale(1.1);
     transition: all 200ms ease-in;
   }
+}
+
+.bestsellers-carousel {
+}
+
+.bestsellers-title {
+  font-size: 1.5rem;
+  text-align: center;
 }
