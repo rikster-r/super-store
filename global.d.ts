@@ -1,5 +1,9 @@
-type Product = {
-  id: number;
+interface Product {
+  _id: number;
+  _updatedAt: string;
+  _createdAt: string;
+  _rev: string;
+  _type: string;
   title: string;
   price: number;
   description: string;
@@ -9,4 +13,15 @@ type Product = {
     rate: number;
     count: number;
   };
+}
+
+interface Item extends Product {
+  count: number;
+}
+
+type Cart = Map<number, Item>;
+
+type cartAction = {
+  type: string;
+  item?: Product;
 };

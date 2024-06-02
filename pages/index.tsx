@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Head from 'next/head';
 import { createClient } from 'next-sanity';
-import Image from 'next/image';
 import { poppins } from './_app';
 import Carousel from '../components/Carousel';
 
@@ -38,7 +37,7 @@ export default function Home({ products }) {
           name="description"
           content="Shop the best deals at Super Store - your ultimate online shopping destination. Explore electronics, fashion, and more!"
         />
-        <title>Super Store</title>
+        <title>SuperStore</title>
       </Head>
       <main className={`${poppins.className} home`}>
         <motion.div

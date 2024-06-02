@@ -32,7 +32,7 @@ export default function Cart() {
       <main className={`${poppins.className} cart`}>
         {cart.size ? (
           <>
-            <h2>Your Cart</h2>
+            <h2 className="cart-title">Your Cart</h2>
             <motion.ul
               className="cart-items"
               variants={variants}
@@ -59,7 +59,7 @@ export default function Cart() {
                       />
                     </div>
                     <div>
-                      <h2 className="item-title">{item.title}</h2>
+                      <h3 className="item-title">{item.title}</h3>
                       <p>{(item.price * item.count).toFixed(2)}$</p>
                       <NewItemButton item={item} removable={false} />
                     </div>
@@ -104,7 +104,7 @@ export default function Cart() {
             exit={{ opacity: 0 }}
           >
             <div className="cart-empty-text">
-              <h2>Your cart is Empty!</h2>
+              <p>Your cart is Empty!</p>
               <Frown />
             </div>
             <Link href="/shop">

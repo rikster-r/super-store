@@ -1,0 +1,8 @@
+@import './reset.css';
+@import './App.css';
+
+@import './components/carousel.css';
+
+@import './Home.css';
+@import './Shop.css';
+@import './Cart.css';

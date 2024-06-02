@@ -77,7 +77,7 @@ export default function Carousel({ title, items }: Props) {
       <div className="carousel">
         <div ref={carousel} className="carousel-container">
           {items.map((item, index) => (
-            <div key={item.id} className="item">
+            <div key={item._id} className="item">
               <div className="img-wrapper">
                 <Image
                   src={item.imageUrl}

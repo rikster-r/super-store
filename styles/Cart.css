@@ -1,0 +1,116 @@
+.cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cart .cart-empty-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.cart .cart-empty-text svg {
+  font-size: 1.5rem;
+}
+
+.cart .cart-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 0;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.cart .cart-items .cart-item {
+  display: grid;
+  grid-template-columns: 1fr 2fr 3rem;
+  align-items: center;
+  gap: 1rem;
+  max-width: 500px;
+}
+
+.cart-item .img {
+  position: relative !important;
+}
+
+.cart-items .cart-item .item-title {
+  font-size: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+.cart .cart-items .btn.btn-trash {
+  aspect-ratio: 1 / 1;
+  background-color: var(--secondary-clr);
+  border: none;
+}
+
+.cart .cart-items .btn.btn-trash svg {
+  font-size: 1.5rem;
+  color: var(--tertiary-clr);
+}
+
+.cart .checkout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: auto;
+  gap: 1rem;
+}
+
+.cart .checkout .btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cart .checkout .btns .btn.btn-checkout {
+  background-color: var(--secondary-clr);
+  padding: 0.6rem 1.2rem;
+  color: var(--secondary-clr);
+  border-radius: 0.8rem;
+  border: none;
+  background-color: var(--primary-clr);
+  transition-property: background-color;
+  transition-timing-function: cubic-bezier(0.2, 0, 0.1, 1);
+  transition-duration: 150ms;
+}
+
+.cart .checkout .btns .btn.btn-checkout:hover {
+  background-color: var(--primary-clr-200);
+}
+
+.cart .checkout .btns .btn.btn-clear {
+  background-color: var(--secondary-clr);
+  padding: 0.5rem 1rem;
+  color: var(--secondary-clr);
+  border-radius: 1rem;
+  border: none;
+  color: var(--tertiary-clr);
+}
+
+.cart .checkout .btns .btn.btn-clear:hover {
+  color: var(--tertiary-clr-200);
+}
+
+@media (min-width: 768px) {
+  .cart .cart-items .cart-item {
+    grid-template-columns: 1fr 3fr 3rem;
+  }
+}

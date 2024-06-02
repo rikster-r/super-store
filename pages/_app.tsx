@@ -1,7 +1,4 @@
-import '../styles/reset.scss';
-import '../styles/Home.scss';
-import '../styles/Cart.scss';
-import '../styles/Shop.scss';
+import '../styles/main.css';
 import { useReducer, createContext } from 'react';
 import Layout from '../components/Layout';
 import { Poppins } from 'next/font/google';
@@ -11,34 +8,6 @@ export const poppins = Poppins({
   weight: ['400', '500', '700'],
   display: 'swap',
 });
-
-interface Product {
-  _id: number;
-  _updatedAt: string;
-  _createdAt: string;
-  _rev: string;
-  _type: string;
-  title: string;
-  price: number;
-  description: string;
-  category: string;
-  imageUrl: string;
-  rating: {
-    rate: number;
-    count: number;
-  };
-}
-
-interface Item extends Product {
-  count: number;
-}
-
-type Cart = Map<number, Item>;
-
-type cartAction = {
-  type: string;
-  item?: Product;
-};
 
 const cartReducer = (cart: Cart, action: cartAction) => {
   switch (action.type) {
