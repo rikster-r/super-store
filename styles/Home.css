@@ -49,6 +49,10 @@ body.blobs-active {
   text-align: center;
 }
 
+.bestsellers-carousel {
+  margin-top: 3rem;
+}
+
 @media (min-width: 768px) {
   .home {
     min-height: calc(100svh - 5rem);
@@ -57,6 +61,6 @@ body.blobs-active {
 
 @media (min-width: 1000px) {
   body.blobs-active {
-    background-image: url('../assets/blob-scene-haikei.svg');
+    background-image: url('../assets/home-bg.svg');
   }
 }

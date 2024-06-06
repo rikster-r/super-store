@@ -12,8 +12,6 @@ export default function Carousel({ title, items }: Props) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const carousel = useRef(null);
 
-  console.log(currentIndex);
-
   useEffect(() => {
     maxScrollWidth.current = carousel.current
       ? carousel.current.scrollWidth - carousel.current.offsetWidth
