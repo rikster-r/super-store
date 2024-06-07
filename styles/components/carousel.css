@@ -8,6 +8,17 @@
   margin: 2rem 1rem;
 }
 
+.carousel .item {
+  min-width: calc(50% - 1rem);
+  height: auto;
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+.carousel .img-wrapper {
+  border-radius: 0.5rem;
+}
+
 .carousel-button {
   display: flex;
 
@@ -47,11 +58,6 @@
   z-index: 0;
   height: auto;
   gap: 1rem;
-}
-
-.carousel .item {
-  min-width: calc(50% - 1rem);
-  height: auto;
 }
 
 @media (min-width: 500px) {
