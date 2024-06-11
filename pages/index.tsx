@@ -5,6 +5,10 @@ import Head from 'next/head';
 import { createClient } from 'next-sanity';
 import { poppins } from './_app';
 import Carousel from '../components/Carousel';
+import motherboardShowcase from '../assets/motherboard_showcase.jpg';
+import clothesShowcase from '../assets/clothes_showcase.jpg';
+import earringsShowcase from '../assets/earrings_showcase.jpg';
+import Image from 'next/image';
 
 const client = createClient({
   projectId: 'hfyf85xv',
@@ -55,9 +59,47 @@ export default function Home({ products }) {
           </Link>
         </motion.div>
       </main>
-      <div className="bestsellers-carousel">
+      <section className="bestsellers-carousel">
         <Carousel title="Bestsellers" items={products.slice(0, 6)} />
-      </div>
+      </section>
+      <section className="categories">
+        <h2 className="categories-title">Browse categories</h2>
+        <div className="categories-container">
+          <div className="categories-jewelry">
+            <div className="img-wrapper">
+              <Image
+                src={earringsShowcase}
+                alt="Earrings picture"
+                height={600}
+                width={400}
+                className="img"
+              />
+            </div>
+          </div>
+          <div className="categories-clothes">
+            <div className="img-wrapper">
+              <Image
+                src={clothesShowcase}
+                alt="Clothes picture"
+                height={400}
+                width={600}
+                className="img"
+              />
+            </div>
+          </div>
+          <div className="categories-tech">
+            <div className="img-wrapper">
+              <Image
+                src={motherboardShowcase}
+                alt="Motherboard picture"
+                height={400}
+                width={600}
+                className="img"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
