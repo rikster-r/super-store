@@ -20,7 +20,7 @@ export default function Carousel({ title, items }: Props) {
 
   useEffect(() => {
     if (carousel !== null && carousel.current !== null) {
-      carousel.current.scrollLeft = carousel.current.offsetWidth * currentIndex ;
+      carousel.current.scrollLeft = carousel.current.offsetWidth * currentIndex;
     }
   }, [currentIndex]);
 
@@ -86,7 +86,7 @@ export default function Carousel({ title, items }: Props) {
                   sizes="50vw, (min-width: 500px) 33vw, (min-width: 1000px) 25vw"
                 />
               </div>
-              <h2 className="item-title">{item.title}</h2>
+              <h3 className="item-title">{item.title}</h3>
               <p className="item-price">{item.price}$</p>
             </div>
           ))}

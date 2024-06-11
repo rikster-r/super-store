@@ -5,14 +5,13 @@
 }
 
 .carousel {
-  margin: 2rem 1rem;
+  margin: 1.5rem 1rem 0 1rem;
 }
 
 .carousel .item {
   min-width: calc(50% - 1rem);
   height: auto;
   border-radius: 1rem;
-  padding: 2rem;
 }
 
 .carousel .img-wrapper {
