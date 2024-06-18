@@ -60,6 +60,7 @@ export default function Carousel({ title, items }: Props) {
           className="carousel-button"
           onClick={prevIndex}
           disabled={isDisabled('prev')}
+          aria-label="Previous"
         >
           <ChevronLeft />
         </button>
@@ -68,6 +69,7 @@ export default function Carousel({ title, items }: Props) {
           className="carousel-button"
           onClick={nextIndex}
           disabled={isDisabled('next')}
+          aria-label="Next"
         >
           <ChevronRight />
         </button>
@@ -83,7 +85,7 @@ export default function Carousel({ title, items }: Props) {
                   fill={true}
                   className="img"
                   priority={index < 8}
-                  sizes="50vw, (min-width: 500px) 33vw, (min-width: 1000px) 25vw"
+                  sizes="45vw, (min-width: 500px) 25vw, (min-width: 768px) 20vw"
                 />
               </div>
               <h3 className="item-title">{item.title}</h3>
