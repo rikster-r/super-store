@@ -70,8 +70,8 @@ export default function Home({ products }) {
               <Image
                 src={earringsShowcase}
                 alt="Earrings picture"
-                height={600}
-                width={400}
+                fill={true}
+                sizes="90vw, (min-width: 500px) 30vw"
                 className="img"
               />
             </div>
@@ -81,8 +81,8 @@ export default function Home({ products }) {
               <Image
                 src={clothesShowcase}
                 alt="Clothes picture"
-                height={400}
-                width={600}
+                fill={true}
+                sizes="90vw, (min-width: 500px) 30vw"
                 className="img"
               />
             </div>
@@ -92,8 +92,8 @@ export default function Home({ products }) {
               <Image
                 src={motherboardShowcase}
                 alt="Motherboard picture"
-                height={400}
-                width={600}
+                fill={true}
+                sizes="90vw, (min-width: 500px) 30vw"
                 className="img"
               />
             </div>
